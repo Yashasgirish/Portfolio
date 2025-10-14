@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yashas G — Data Analyst Professional</title>
+  <meta name="description" content="Resume and portfolio of Yashas G — Data Analyst. Skills: SQL, Power BI, Looker Studio, Advanced Excel, Data Management and Reporting." />
+  <meta name="author" content="Yashas G" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+     :root {
+      --bg: #00223b;
+      --panel: #0b1738;
+      --muted: #005d15;
+      --text: #fff;
+      --brand: #024306;
+      --brand-2: #57b15a;
+      --ring: rgba(52, 211, 153, 0.35);
+      --ok: #10b981;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background: var(--panel);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:hover {
+      color: var(--bg);
+      transform: scale(1.03);
+    }
+    img{max-width:100%;display:block}
+    .container{width:min(1100px, 92%);margin-inline:auto}
+    .pill{border:1px solid rgb(30 46 73);padding:.45rem 1.7rem;border-radius:999px;display:inline-flex;gap:.5rem;align-items:center;color:var(--muted)}
+    .tag{display:inline-block;background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.35);padding:.3rem .6rem;border-radius:999px;font-size:.8rem;color:#dcd7ff;margin:.2rem .25rem 0 0}
+
+    /* ====== Nav ====== */
+    header{position:fixed;top:0;width:100%;z-index:50;background:rgb(30 46 73);backdrop-filter: blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav{display:flex;align-items:center;justify-content:flex-start;padding:0.45rem 0;gap:.75rem;min-height:58px}
+  .brand{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.2px}
+  .brand .logo{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:0 8px 24px var(--ring)}
+  .brand .logo span{font-weight:800;color:#fff}
+  .brand span{line-height:1;display:block;white-space:nowrap;font-size:.96rem}
+  /* push primary nav to the right */
+  .nav nav{margin-left:auto}
+  .nav ul{display:flex;gap:.7rem;list-style:none;margin:0;padding:0;align-items:center;flex-wrap:nowrap;overflow:hidden}
+  .nav li{white-space:nowrap}
+  .nav a{color:#dbe3f5;padding:.35rem .6rem;border-radius:8px;display:inline-block;font-weight:600;font-size:.92rem}
+  .nav a:hover{background:rgba(255,255,255,.04)}
+  .menu-btn{display:none}
+
+    /* ====== Hero ====== */
+    .hero{
+      position: relative;
+      overflow: hidden;
+      padding-top: 8rem;
+      padding-bottom: 6rem;
+      text-align: left;
+      color: #fff;
+      min-height: 400px;
+    }
+    .grid-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;animation: bounceIn 1s ease-out both;justify-items: start;}
+    .kicker{color:var(--muted);margin:0 0 .5rem}
+    h1{font-size:clamp(28px, 4vw, 46px);line-height:1.15;margin:.3rem 0 1rem}
+    .lead{font-size:1.05rem;color:#ffffff;margin:0 0 1.4rem}
+    .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+    .btn{appearance:none;border:0;cursor:pointer;font-weight:600;border-radius:12px;padding:.9rem 1rem}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 12px 30px var(--ring)}
+    .btn-ghost {
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      border: 1px solid rgb(38 114 42);
+    }
+    .card-hero{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);padding:18px}
+    .hero-img{aspect-ratio:1.3/1;border-radius:14px;background:linear-gradient(135deg, rgba(124,92,255,.18), rgba(33,212,253,.18));display:grid;place-items:center;color:#cfd6e6;font-size:.95rem;border:1px dashed rgba(255,255,255,.18)}
+    .grid-hero h1{color: #ffffff;}
+
+    /* Graph background in hero */
+    .graph-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+      background-image: linear-gradient(to right, rgb(0 0 0 / 6%) 1px, transparent 1px), linear-gradient(to top, rgba(16, 16, 16, 0.06) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .bar {
+      position: absolute;
+      bottom: 0;
+      width: 16px;
+      background: rgb(171 55 27);
+      border-radius: 6px;
+      animation: bounce 2.5s infinite ease-in-out;
+    }
+    .bar1 { left: 78%; height: 45%; animation-delay: 0s; }
+    .bar2 { left: 83%; height: 65%; background: rgb(33 150 243 / 72%); animation-delay: 0.4s; }
+    .bar3 { left: 88%; height: 35%; animation-delay: 0.8s; }
+    .bar4 { left: 93%; height: 55%; background: rgb(33 150 243 / 72%); animation-delay: 0.6s; }
+    @keyframes bounce {
+      0%, 100% { transform: scaleY(0.6); }
+      50% { transform: scaleY(1.1); }
+    }
+    .line-chart {
+      position: absolute;
+      bottom: -5%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      opacity: 0.4;
+      z-index: 0;
+      animation: moveLine 8s linear infinite;
+    }
+    .line-chart polyline {
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      animation: drawLine 4s linear infinite;
+    }
+    @keyframes drawLine {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    /* ====== Sections ====== */
+    section{padding:56px 0}
+    .section-title{font-size:1.6rem;margin:0 0 18px}
+    .sub{color:var(--muted);margin:0 0 24px}
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow)}
+    .container h2{color: #ffffff;}
+
+    /* === Section Divider === */
+    .section-divider {
+      width: 80%;
+      margin: 60px auto;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--brand),
+        var(--brand-2),
+        transparent
+      );
+      opacity: 0.6;
+    }
+
+    /* ====== About ====== */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .about .me{padding:20px}
+    .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:16px}
+    .kv div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:12px}
+    .kv b{display:block;font-size:.85rem;color:#dfe7fb}
+    .kv small{color:#d7d9de}
+
+  /* ====== Skills ====== */
+  .skills{display:grid;grid-template-columns:1fr;gap:16px}
+  /* show three columns on larger screens to mirror the design in the provided image */
+  .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:16px}
+  .skill-card{padding:18px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);min-height:120px}
+  .skill-card h4{margin:0 0 .75rem;font-size:1.02rem;display:flex;align-items:center;gap:.75rem}
+  .skill-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:#eafff0;font-size:16px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 8px 20px var(--ring);transition:transform .18s ease,box-shadow .18s ease}
+  .skill-icon i{font-size:16px;color:#ffffff}
+  .skill-icon:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 20px 50px rgba(37,199,104,0.18),0 0 26px rgba(37,199,104,0.14)}
+  /* green pill tags for skills */
+  .skill-card .tag{display:inline-block;padding:.35rem .7rem;border-radius:999px;font-size:.82rem;color:#ffffff;background:rgba(6,100,21,.04);border:1px solid rgba(37, 199, 104, .12);margin:.28rem .35rem 0 0;transition:box-shadow .18s ease,transform .12s ease,border-color .12s ease}
+  .skill-card .tag:hover{box-shadow:0 10px 30px rgba(37,199,104,0.12),0 0 18px rgba(37,199,104,0.12);transform:translateY(-3px);border-color:rgba(37,199,104,0.5)}
+  /* reduce tag spacing within cards */
+  .skill-card > div{margin-top:6px}
+
+    /* ====== Timeline (Education & Experience) ====== */
+    .timeline{position:relative;padding:10px 10px 10px 24px}
+    .timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),transparent)}
+    .t-item{position:relative;margin:0 0 16px;padding-left:18px}
+    .t-item::before{content:"";position:absolute;left:-2px;top:.95rem;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 0 4px rgba(124,92,255,.18)}
+    .t-h{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+    .t-h b{font-size:1rem}
+    .t-h .pill{font-size:.78rem}
+    .t-sub{color:#d7d9de;margin:.15rem 0 .4rem}
+
+  /* Remove the timeline dot for the Experience section and show bullets under the heading instead */
+  #experience .t-item::before{display:none}
+  /* Style for experience bullet list */
+  #experience .exp-list{margin:0;padding-left:1.05rem;color:#d7d9de}
+  #experience .exp-list li{margin:0.45rem 0;line-height:1.6}
+
+  /* ====== Courses & Certificates ====== */
+  /* outer container uses existing .panel styling; inner columns are simple lists */
+  .certificates{padding:14px}
+  .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .cert-column{padding:8px;display:flex;flex-direction:column}
+  /* make lists stretch so items align across columns visually */
+  .cert-list{display:flex;flex-direction:column;gap:10px;flex:1;width:100%}
+  /* ensure each certificate box has consistent height and vertically centered content */
+  .cert-item{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03);padding:12px;border-radius:10px;transition:transform .12s ease,box-shadow .18s ease,border-color .12s ease,background .12s ease;display:flex;align-items:center;min-height:56px}
+  .cert-item:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(37,199,104,0.12),0 0 26px rgba(37,199,104,0.08);border-color:rgba(37,199,104,0.45);background:rgba(37,199,104,0.02)}
+
+    /* ====== Projects ====== */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{overflow:hidden}
+    .project .cover{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(135deg, rgba(124,92,255,.18), rgba(33,212,253,.18));border:1px dashed rgba(255,255,255,.18);display:grid;place-items:center;color:#cfd6e6}
+    .project .body{padding:14px}
+    .project h4{margin:0 0 .25rem}
+    .project p{color:#cdd3e3;margin:.2rem 0 .6rem}
+
+    /* ====== Contact ====== */
+    .contact{display:grid;grid-template-columns:1fr .9fr;gap:20px}
+    .contact .map{border-radius:14px;overflow:hidden;height:100%;min-height:280px;border:1px solid rgba(255,255,255,.06)}
+    form{display:grid;gap:10px}
+    input,textarea{width:100%;background:#0e131c;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.8rem 1rem;color:var(--text);font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    input:focus,textarea:focus{outline:2px solid var(--ring);border-color:transparent}
+
+  /* ====== Footer ====== */
+  /* Footer should flow with the document (not fixed) */
+  footer{padding:8px 0;color:var(--text);border-top:1px solid rgba(255,255,255,.06);background: #0b1738;position: static;width: 100%;}
+
+    /* === Animations === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+    .btn, .pill {
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      transform: scale(1.03);
+    }
+    .pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .nav a {
+      position: relative;
+    }
+    .nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 2px;
+      background-color: var(--brand);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    .nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    .project .cover {
+      overflow: hidden;
+      position: relative;
+    }
+    .project .cover:hover {
+      cursor: pointer;
+    }
+    .project .cover::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.04);
+      transition: background 0.3s ease;
+    }
+    .project .cover:hover::after {
+      background: rgba(255,255,255,0.08);
+    }
+    .project .cover img {
+      transition: transform 0.5s ease;
+    }
+    .project .cover:hover img {
+      transform: scale(1.05);
+    }
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.95) translateY(30px);}
+      60% { opacity: 1; transform: scale(1.02) translateY(-10px);}
+      100% { transform: scale(1) translateY(0);}
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 980px){
+      .grid-hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+        /* show collapsed menu earlier to avoid wrapping nav items */
+        .nav ul{display:none}
+        .menu-btn{display:inline-flex;align-items:center;gap:.5rem}
+      }
+    @media (max-width: 800px){
+      .hero { min-height: 320px; }
+      .graph-elements { background-size: 30px 30px; }
+      .bar { width: 10px; }
+      .bar1 { left: 65%; }
+      .bar2 { left: 75%; }
+      .bar3 { left: 85%; }
+      .bar4 { left: 95%; }
+    }
+    @media (max-width: 640px){
+      .nav ul{display:none}
+      .menu-btn{display:inline-flex;align-items:center;gap:.5rem}
+      /* mobile nav opens when .open is set on #mainNav */
+      #mainNav.open{display:flex;position:absolute;top:64px;right:16px;background:rgba(11,23,56,.96);padding:12px;border-radius:10px;flex-direction:column;gap:.5rem;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+      .projects{grid-template-columns:1fr}
+      .skill-groups{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+      .hero { padding: 40px 0 20px; min-height: 220px;}
+      .grid-hero { gap: 20px; }
+      .grid-hero h1 { font-size: 2rem; }
+      .lead { font-size: 1rem; }
+      .cta { flex-direction: column; gap: .5rem; align-items: stretch; }
+      .graph-elements { height: 120px; min-height: 80px; background-size: 18px 18px; }
+      .bar { width: 7px; }
+      .bar1 { left: 60%; }
+      .bar2 { left: 70%; }
+      .bar3 { left: 80%; }
+      .bar4 { left: 90%; }
+      .line-chart { height: 40%; }
+    }
+    @media (max-width: 400px){
+      .hero { padding: 20px 0 10px; min-height: 120px;}
+      .graph-elements { height: 60px; min-height: 40px; background-size: 12px 12px; }
+      .bar { width: 5px; }
+      .bar1 { left: 55%; }
+      .bar2 { left: 65%; }
+      .bar3 { left: 75%; }
+      .bar4 { left: 85%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== NAV ====== -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"><span>YG</span></div>
+          <span>Yashas G</span>
+        </div>
+        <nav aria-label="Primary">
+          <ul id="mainNav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#courses">Course & Certificates</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievement</a></li>
+          </ul>
+        </nav>
+        <button class="menu-btn pill" id="menuBtn" aria-label="Open menu">☰ <span>Menu</span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ====== HERO ====== -->
+    <section class="hero container" id="home">
+      <div class="grid-hero">
+        <div>
+          <p class="kicker">Data Analyst Professional</p>
+          <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Yashas G</span></h1>
+          <p class="lead">Professional Data Analyst with hands-on experience managing and analyzing large datasets (1M+ records), building interactive dashboards, and automating reporting workflows. Skilled in SQL, Power BI, Looker Studio, Advanced Excel and Google Apps Script. Delivered insights that improved sales efficiency by 25%.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-ghost" href="https://mail.google.com/mail/?view=cm&fs=1&to=yashasgirish.63@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/yashasgirish" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-ghost" href="https://github.com/Yashasgirish?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+            <a class="btn btn-ghost" href="https://drive.google.com/file/d/1Ljo6v9NbR_X0ja9GdOgzY4PooWZWkzTK/view?usp=drivesdk" target="_blank">Resume</a>
+          </div>
+        </div>
+      </div>
+      <!-- Responsive graph background INSIDE hero -->
+      <div class="graph-elements">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <svg class="line-chart" viewBox="0 0 200 100" preserveAspectRatio="none">
+          <polyline 
+            fill="none" 
+            stroke="rgb(33 150 243 / 72%)" 
+            stroke-width="3" 
+            points="0,80 40,60 80,70 120,40 160,50 200,30" />
+        </svg>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ====== ABOUT ====== -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="sub">Professional summary and contact details.</p>
+        <div class="about">
+          <div class="panel me">
+            <p>
+              Professional Data Analyst with hands-on experience in data management, analysis, and visualization. I work end-to-end on data pipelines, clean and standardize large datasets, build interactive dashboards, and automate recurring reports to deliver timely insights for business stakeholders.
+            </p>
+            <div class="kv">
+              <div><b>Email</b><small>yashasgirish.63@gmail.com</small></div>
+              <div><b>Phone</b><small>+91 6364371603</small></div>
+              <div><b>Location</b><small>Bangalore, Karnataka</small></div>
+              <div><b>LinkedIn</b><small>https://www.linkedin.com/in/yashasgirish</small></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="hero-img" style="min-height:260px">
+              <div>
+                <img src="Image\Yash.jpg" alt="BridgeConnect project cover" style="width:7000%; height:250px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SKILLS ====== -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="sub">Core technical and soft skills.</p>
+        <div class="panel skills">
+          <div class="skill-groups">
+            <div class="skill-card">
+              <h4><span class="skill-icon"><i class="fas fa-database" aria-hidden="true"></i></span> Data & BI</h4>
+              <div>
+                <span class="tag">MySQL</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Looker Studio</span>
+                <span class="tag">Advanced Excel</span>
+                <span class="tag">Google Sheets</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4><span class="skill-icon"><i class="fab fa-js" aria-hidden="true"></i></span> Scripting & Automation</h4>
+              <div>
+                <span class="tag">Google Apps Script</span>
+                <span class="tag">Automation Reporting (MIS)</span>
+                <span class="tag">Git</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4><span class="skill-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></span> Analysis & Visualization</h4>
+              <div>
+                <span class="tag">Data Cleaning & Preprocessing</span>
+                <span class="tag">EDA</span>
+                <span class="tag">ETL</span>
+                <span class="tag">Dashboarding</span>
+                <span class="tag">KPI Design</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <h4><span class="skill-icon"><i class="fas fa-user-friends" aria-hidden="true"></i></span> Soft Skills</h4>
+              <div>
+                <span class="tag">Effective Communication</span>
+                <span class="tag">Team Management</span>
+                <span class="tag">Analytical Thinking</span>
+                <span class="tag">Adaptive & Flexible</span>
+                <span class="tag">Time Management</span>
+                <span class="tag">Business Acumen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== EXPERIENCE ====== -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="sub">Professional roles and measurable impact.</p>
+        <div class="panel timeline">
+          <div class="t-item">
+            <div class="t-h">
+              <b>Data Analyst (Data Management Assistant) – Maruti Flex Traders LLP</b>
+              <span class="pill">Jan 2025 – Present</span>
+            </div>
+            <div class="t-sub">
+              <ul class="exp-list">
+                <li>Managed end-to-end market data across 22 branch markets and Pan-India, handling over <b>1M+</b> records to uncover trends and performance insights.</li>
+                <li>Extracted, cleaned, and standardized large datasets from SQL databases and supplier sources to produce analysis-ready data.</li>
+                <li>Performed data preprocessing: removed duplicates, standardized formats, imputed missing values, and validated information to improve data reliability.</li>
+                <li>Designed and delivered interactive dashboards (Looker Studio for branches; Power BI for All-India), providing multi-level insights and contributing to a <b>25% improvement</b> in sales term efficiency.</li>
+                <li>Automated reporting workflows using Google Apps Script to sync data between sheets and schedule PDF deliveries, reducing manual effort and improving timeliness.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== COURSES & CERTIFICATES ====== -->
+    <section id="courses">
+      <div class="container">
+        <h2 class="section-title">Courses & Certifications</h2>
+        <p class="sub">Selected certifications and training.</p>
+        <div class="certificates panel">
+          <div class="cert-grid">
+            <div class="cert-column">
+              <div class="cert-list">
+                <div class="cert-item">Advance Excel Course — Edu Pinnacle (Sep 2023)</div>
+                <div class="cert-item">Power BI for Beginners — SkillUp (Jul 2024)</div>
+                <div class="cert-item">Luxury Brand Management — Paris School of Luxury (May 2024)</div>
+              </div>
+            </div>
+            <div class="cert-column">
+              <div class="cert-list">
+                <div class="cert-item">Business & Management Simulation (Capsim) — Capstone (Sep–Dec 2023)</div>
+                <div class="cert-item">Data Analytics — LinkedIn (Sep 2024)</div>
+                <div class="cert-item">Power BI / MySQL / Tally — (self-study / vendor courses)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROJECTS ====== -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+          <!-- Project 1 -->
+          <article class="panel project">
+            <div class="cover" aria-label="BridgeConnect project cover placeholder">
+              <a href="https://github.com/Escanor-pride-sin/Passenger-Flow-Prediction-in-Metro-Systems" target="_blank"></a>
+              <img src="Image\Screenshot 2025-08-26 150724.png" alt="BridgeConnect project cover" style="width:100%; height:auto;">
+            </div>
+            <div class="body">
+              <h4><a href="https://github.com/Escanor-pride-sin/Passenger-Flow-Prediction-in-Metro-Systems" target="_blank">Passenger Flow Prediction in Metro Systems</a></h4>
+              <p>Developed and deployed a dynamic feature fusion network (DFFN) to predict metro passenger flow, leveraging RF, LR, DT, and 
+                KNN classifiers on historical and real-time datasets to optimize scheduling and service quality. <br>Achieved improved prediction 
+                accuracy over baseline statistical models, enabling real-time resource allocation and supporting metro authorities in operational 
+                </p>
+              <div>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Pandas, Numpy, Matplotlib</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="panel project">
+            <div class="cover" aria-label="Cooking Companion project cover placeholder">
+              <a href="https://github.com/Escanor-pride-sin/N8N-Scheduler-Agent" target="_blank"></a>
+              <img src="Image\Screenshot 2025-08-26 205726.png" alt="BridgeConnect project cover" style="width:100%; height:auto;">
+            </div>
+            <div class="body">
+              <h4><a href="https://github.com/Escanor-pride-sin/N8N-Scheduler-Agent" target="_blank">Scheduler Agent</a></h4>
+              <p>AI agent to automatically add tasks and events to calendar just by chatting with it.<br>This  AI Agent add, delete, and retrieve tasks and events seamlessly using this AI-powered workflow.</p>
+              <div>
+                <span class="tag">AI Models</span>
+                <span class="tag">Gemini</span>
+              </div>
+            </div>
+          </article>
+
+           <!-- Project 3 -->
+          <article class="panel project">
+            <div class="cover" aria-label="Cooking Companion project cover placeholder">
+              <a href="https://github.com/Escanor-pride-sin/Spotify-Songs-Genre-Segmentation" target="_blank"></a>
+              <img src="Image\SPOTIFY.jpg" alt="BridgeConnect project cover" style="width:100%; height:auto;">
+            </div>
+            <div class="body">
+              <h4><a href="https://github.com/Escanor-pride-sin/Spotify-Songs-Genre-Segmentation" target="_blank">Spotify-Songs-Genre-Segmentation</a></h4>
+              <p>Engineered clustering and similarity models for 33,000 Spotify playlists<br> Built a recommendation engine improving top-N engagement by 30%.</p>
+              <div>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Pandas, Numpy, Matplotlib</span>
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel project">
+            <div class="cover" aria-label="Cooking Companion project cover placeholder">
+              <a href="https://github.com/Escanor-pride-sin/FIFA-Data-Analysis" target="_blank"></a>
+              <img src="Image\FIFA.jpg" alt="BridgeConnect project cover" style="width:100%; height:auto;">
+            </div>
+            <div class="body">
+              <h4><a href="https://github.com/Escanor-pride-sin/FIFA-Data-Analysis" target="_blank">FIFA Data Analysis</a></h4>
+              <p>This project analyzed a comprehensive FIFA 20 player dataset of 18,278 players using Python. <br>Uncovering key performance insights through advanced data preprocessing, visualization and statistical methods</p>
+              <div>
+                <span class="tag">Pandas, Numpy, Matplotlib</span>
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Project 5 -->
+          <article class="panel project">
+            <div class="cover" aria-label="Customer Churn Prediction project cover placeholder">
+              <a href="https://github.com/Escanor-pride-sin/Prediction-of-Loan-Transaction" target="_blank"></a>
+              <img src="Image\loan.gif" alt="BridgeConnect project cover" style="width:100%; height:auto;">
+            </div>
+            <div class="body">
+              <h4><a href="https://github.com/Escanor-pride-sin/Prediction-of-Loan-Transaction" target="_blank">Prediction of Loan Transaction</a></h4>
+              <p>Built a loan repayment prediction system using 209,593 records and 37 features. <br>Conducted feature engineering and model tuning.  </p>
+              <div>
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Pandas, Numpy, Matplotlib</span>
+                <span class="tag">Scikit-learn</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Job Simulation section removed as requested -->
+
+    <!-- ====== EDUCATION ====== -->
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="panel timeline">
+          <div class="t-item">
+            <div class="t-h"><b>Master of Business Administration (Business Analytics & Marketing)</b> <span class="pill">2022 – 2024</span></div>
+            <div class="t-sub">AIMS, Bangalore — Bangalore University | CGPA: 6.55</div>
+          </div>
+          <div class="t-item">
+            <div class="t-h"><b>Bachelor of Commerce (Accounting & Taxation)</b> <span class="pill">2019 – 2022</span></div>
+            <div class="t-sub">Oxford Degree College, Bangalore — Bangalore University | 85%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ACHIEVEMENTS ====== -->
+    <section id="achievements">
+      <div class="container">
+        <h2 class="section-title">Achievements & Positions</h2>
+        <div class="panel" style="padding:16px">
+          <p><b>Capsim Simulation</b> — Best team and Team Leader in Capsim simulation; finished as a top-performing company among competitors during MBA first year.</p>
+          <p><b>Cricket</b> — Captain of Inter-College Winning Cricket Team in degree final year; led the team to championship victory.</p>
+          <p><b>Positions of Responsibility</b> — College Volunteer & Discipline Committee member; Treasurer of College Club; Team Leader in business simulation.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Yashas G<a target="_blank" rel="noopener"></a>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if(href.length > 1){
+          e.preventDefault();
+          document.querySelector(href)?.scrollIntoView({behavior:'smooth', block:'start'});
+          // If mobile nav is open, close it after click
+          if(window.innerWidth <= 640){
+            document.getElementById('mainNav').classList.remove('open');
+          }
+        }
+      });
+    });
+
+    // Mobile menu toggle — shows nav list on small screens
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mainNav');
+    menuBtn?.addEventListener('click',()=>{
+      nav.classList.toggle('open');
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(e){
+      if(window.innerWidth <= 640){
+        if(!nav.contains(e.target) && !menuBtn.contains(e.target)){
+          nav.classList.remove('open');
+        }
+      }
+    });
+
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
